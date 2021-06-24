@@ -36,12 +36,18 @@ mongoose.connect(process.env.MONGO_DB_CLOUD_URL , {
 
 
 //simple request
+
+app.get('/', (request , response) => {
+    response.send(`<h2>Welcome to Online Shopping Application Backend</h2>`);
+});
+
+/*//for deployment purpose
 if(process.env.NODE_ENV === "production"){
     app.use(express.static(path.join(__dirname , 'client' , 'build')));
     app.get('/', (request,response) => {
         response.sendFile(path.join(__dirname , 'client' , 'build' , 'index.html'));
     });
-}
+}*/
 
 
 //router configuration
